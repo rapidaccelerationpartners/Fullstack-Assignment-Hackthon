@@ -1,0 +1,9 @@
+.Station{
+    display: flex;
+    flex-direction: row;
+}
+
+.Station_component{
+    margin: 10px;
+    padding: 10px;
+}
