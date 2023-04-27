@@ -159,6 +159,9 @@ exports.betTrain = async (req, res) => {
       );
     }
 
+
+    Trains.sort((a,b)=>a.ArrivalTime-b.ArrivalTime);
+
     res.status(200).json({
       success: true,
       Trains,
