@@ -55,6 +55,7 @@ exports.betTrain = async (req, res) => {
 
     const startStation = await Station.findOne({ stationName: start });
     const endStation = await Station.findOne({ stationName: end });
+    console.log(startStation,endStation)
 
     if (!startStation || !endStation) {
       return res.status(400).json({

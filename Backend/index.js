@@ -11,6 +11,12 @@ const app=express();
 app.use(express.json());
 app.use(cors());
 
+app.get("/",(req,res)=>{
+  res.status(200).json({
+    success:true,
+    message:"the train app is working"
+  })
+})
 app.use("/api/v1",router)
 
 app.listen(process.env.Port,()=>{
