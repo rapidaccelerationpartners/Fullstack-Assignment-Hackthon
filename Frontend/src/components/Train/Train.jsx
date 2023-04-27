@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { details } from '../../action/action';
 import { Dialog } from '@mui/material';
 import Station from '../Station/Station';
+import Loading from '../Loading/Loading';
 
 const Train = ({TrainName,TrainNumber,ArrivalTime,DepartureTime,Price,start,end,trainId}) => {
 
@@ -51,15 +52,19 @@ const Train = ({TrainName,TrainNumber,ArrivalTime,DepartureTime,Price,start,end,
         >
             <div className='DialogBox'>
              {
-                open&&!loading&&data.success&&data.details.length>0?data.details.map((station,index)=>(
-                  <Station
-                  key={index}
-                  StationName={station.StationName}
-                  ArrivalTime={station.ArrivalTime}
-                  Distance={station.Distance}
-                  Price={station.Price}
-                  />
-                )):<h1>Something is wrong</h1>
+                open?(
+                    loading?<Loading/>:(
+                        data.success&&data.details.length>0?data.details.map((station,index)=>(
+                            <Station
+                            key={index}
+                            StationName={station.StationName}
+                            ArrivalTime={station.ArrivalTime}
+                            Distance={station.Distance}
+                            Price={station.Price}
+                            />
+                          )):<h1>Something is wrong</h1>
+                    )
+                ):null
              }
             </div>
         </Dialog>

@@ -10,7 +10,8 @@ export const allTrainAction=(start,end)=>async(dispatch)=>{
 
         console.log("allTrains api is call");
 
-        const {data}=await axios.post("http://localhost:4000/api/v1/allTrains",{start,end});
+        const {data}=await axios.post("https://train-app-backend.onrender.com/api/v1/allTrains",{start,end});
+        console.log(data)
 
         dispatch({
             type:"allTrainSuccess",
@@ -20,7 +21,7 @@ export const allTrainAction=(start,end)=>async(dispatch)=>{
     } catch (error) {
         dispatch({
             type: "allTrainFailure",
-            playload: error.response.data.message,
+            playload: error.response.data,
           });
     }
 }
@@ -34,7 +35,8 @@ export const details=(start,end,trainId)=>async(dispatch)=>{
 
         console.log("details api is call");
 
-        const {data}=await axios.post("http://localhost:4000/api/v1/details",{start,end,trainId});
+        const {data}=await axios.post("https://train-app-backend.onrender.com/api/v1/details",{start,end,trainId});
+        // http://localhost:4000/api/v1/details
 
         dispatch({
             type:"detailsSuccess",
@@ -43,7 +45,7 @@ export const details=(start,end,trainId)=>async(dispatch)=>{
     } catch (error) {
         dispatch({
             type: "detailsFailure",
-            playload: error.response.data.message,
+            playload: error.response.data,
           });
     }
 }
