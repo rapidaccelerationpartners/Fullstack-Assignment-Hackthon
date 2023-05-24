@@ -1,0 +1,10 @@
+.Home{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 40px;
+}
+.form{
+ display: flex;
+ flex-direction: row;
+}

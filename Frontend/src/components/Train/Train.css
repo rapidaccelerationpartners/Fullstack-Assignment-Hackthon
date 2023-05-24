@@ -1,0 +1,15 @@
+.Train{
+    display: flex;
+    flex-direction: row;
+}
+
+.Train_component{
+    margin: 10px;
+    padding: 10px;
+}
+
+.DialogBox {
+    min-width: 500px;
+    height: 100vh;
+    padding: 2vmax;
+  }
